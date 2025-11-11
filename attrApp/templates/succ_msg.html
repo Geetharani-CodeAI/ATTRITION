@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block body_block %}
+
+<div class="container mt-5">
+  <div class="card shadow-lg border-0">
+    <div class="card-header bg-success text-white text-center">
+      <h2>Employee Attrition Prediction Result</h2>
+    </div>
+
+    <div class="card-body">
+      <h4 class="text-primary mb-3">Input Values</h4>
+      <div class="row">
+        <div class="col-md-6">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Age: {{ data_age }}</li>
+            <li class="list-group-item">Daily Rate: {{ data_dailyrate }}</li>
+            <li class="list-group-item">Distance From Home: {{ data_distancefromhome }}</li>
+            <li class="list-group-item">Education: {{ data_education }}</li>
+            <li class="list-group-item">Environment Satisfaction: {{ data_environmentsatisfaction }}</li>
+            <li class="list-group-item">Hourly Rate: {{ data_hourlyrate }}</li>
+            <li class="list-group-item">Job Involvement: {{ data_jobinvolvement }}</li>
+            <li class="list-group-item">Job Level: {{ data_joblevel }}</li>
+            <li class="list-group-item">Job Satisfaction: {{ data_jobsatisfaction }}</li>
+            <li class="list-group-item">Monthly Income: {{ data_monthlyincome }}</li>
+          </ul>
+        </div>
+
+        <div class="col-md-6">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Num Companies Worked: {{ data_numcompaniesworked }}</li>
+            <li class="list-group-item">Percent Salary Hike: {{ data_percentsalaryhike }}</li>
+            <li class="list-group-item">Performance Rating: {{ data_performancerating }}</li>
+            <li class="list-group-item">Relationship Satisfaction: {{ data_relationshipsatisfaction }}</li>
+            <li class="list-group-item">Stock Option Level: {{ data_stockoptionlevel }}</li>
+            <li class="list-group-item">Total Working Years: {{ data_totalworkingyears }}</li>
+            <li class="list-group-item">Training Times Last Year: {{ data_trainingtimeslastyear }}</li>
+            <li class="list-group-item">Work Life Balance: {{ data_worklifebalance }}</li>
+            <li class="list-group-item">Years At Company: {{ data_yearsatcompany }}</li>
+            <li class="list-group-item">Years With Current Manager: {{ data_yearswithcurrmanager }}</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="my-4">
+
+      {% if out == 1 %}
+        <div class="alert alert-danger text-center" role="alert">
+          <h4><b>Prediction:</b> This employee <b>WILL LEAVE</b> your company in the future.</h4>
+        </div>
+      {% else %}
+        <div class="alert alert-success text-center" role="alert">
+          <h4><b>Prediction:</b> This employee <b>WILL NOT LEAVE</b> your company in the future.</h4>
+        </div>
+      {% endif %}
+
+      <div class="text-center mt-4">
+        <a href="{% url 'attrApp:attr' %}" class="btn btn-primary">Predict Another Employee</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
