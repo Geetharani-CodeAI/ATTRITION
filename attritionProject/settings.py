@@ -10,7 +10,7 @@ TEMPLATE_DIR = BASE_DIR / 'templates'
 # 🔐 SECURITY SETTINGS
 # =======================
 SECRET_KEY = 'django-insecure-3l5$w-us%)(lo8nm%f8=n8(#xt$-k)96ee_(o-hjm&lhs3tg6s'
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['*']  # ✅ Allow all during development (restrict in production)
 
 # =======================
@@ -116,3 +116,4 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # 🆔 DEFAULTS
 # =======================
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
