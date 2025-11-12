@@ -1,0 +1,17 @@
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+import pickle
+
+# Split data
+x_train, x_test, y_train, y_test = train_test_split(indep_x, dep_y, test_size=0.30, random_state=0)
+
+# Initialize and fit the scaler
+sc = StandardScaler()
+x_train = sc.fit_transform(x_train)
+x_test = sc.transform(x_test)
+
+# Save the scaler to a file
+with open('scaler.pkl', 'wb') as file:
+    pickle.dump(sc, file)
+
+print("✅ Scaler has been saved as scaler.pkl")
