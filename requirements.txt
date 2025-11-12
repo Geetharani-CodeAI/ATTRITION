@@ -23,5 +23,6 @@ sqlparse==0.5.3
 statsmodels==0.14.5
 wheel==0.45.1
 xgboost==3.1.1
+gunicorn-23.0.0
 
 
